@@ -4,31 +4,70 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('JavaScript is working!');
 });
 
-let currentSlide = 0;
+console.log("Script loaded");
 
-function changeSlide(direction) {
-    const slides = document.querySelector('.slides');
-    const totalSlides = slides.children.length;
-    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+console.log("Script loaded");
 
-    // Adjust for continuous transition
-    if (currentSlide === totalSlides - 2 && direction === 1) {
-        slides.style.transition = 'none';
-        slides.style.transform = `translateX(0%)`;
-        currentSlide = 0;
-        setTimeout(() => {
-            slides.style.transition = 'transform 0.5s ease-in-out';
-            slides.style.transform = `translateX(-${currentSlide * 50}%)`;
-        }, 50);
-    } else if (currentSlide === 0 && direction === -1) {
-        slides.style.transition = 'none';
-        slides.style.transform = `translateX(-${(totalSlides - 2) * 50}%)`;
-        currentSlide = totalSlides - 2;
-        setTimeout(() => {
-            slides.style.transition = 'transform 0.5s ease-in-out';
-            slides.style.transform = `translateX(-${currentSlide * 50}%)`;
-        }, 50);
+// Picture Carousel
+let currentIndex = 0;
+
+function showSlide(index) {
+    console.log("showSlide called with index:", index);
+    const slides = document.querySelectorAll('.carousel-item');
+    console.log("Number of slides:", slides.length);
+    if (index >= slides.length) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = slides.length - 1;
     } else {
-        slides.style.transform = `translateX(-${currentSlide * 50}%)`;
+        currentIndex = index;
     }
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+    console.log("Current offset:", offset);
 }
+
+function nextSlide() {
+    console.log("nextSlide called");
+    showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+    console.log("prevSlide called");
+    showSlide(currentIndex - 1);
+}
+
+// Initialize the carousel
+showSlide(currentIndex);
+
+// Reviews Carousel
+let currentIndex2 = 0;
+
+function showReviewSlide(index) {
+    console.log("showReviewSlide called with index:", index);
+    const slides = document.querySelectorAll('.review-item');
+    console.log("Number of review slides:", slides.length);
+    if (index >= slides.length) {
+        currentIndex2 = 0;
+    } else if (index < 0) {
+        currentIndex2 = slides.length - 1;
+    } else {
+        currentIndex2 = index;
+    }
+    const offset = -currentIndex2 * 100;
+    document.querySelector('.review').style.transform = `translateX(${offset}%)`;
+    console.log("Current review offset:", offset);
+}
+
+function nextReviewSlide() {
+    console.log("nextReviewSlide called");
+    showReviewSlide(currentIndex2 + 1);
+}
+
+function prevReviewSlide() {
+    console.log("prevReviewSlide called");
+    showReviewSlide(currentIndex2 - 1);
+}
+
+// Initialize the carousel
+showReviewSlide(currentIndex2);

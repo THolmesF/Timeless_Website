@@ -20,49 +20,55 @@
     <body> 
 
         <!--Main heading of the web page-->
-        <h1>Timeless Desserts</h1>
+        <div class="logo-picture">
         <img src="Logo Compressed.png" alt="Logo" class="logo">
-        
+        </div>
+
         <!--Paragraph with some text-->
         <script src="script.js"></script>
         
         <!--Navigation bar-->
         <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#menu">Menu</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </div>
 
               
-        <!--Picture Carousel-->
+        <!-- Picture Carousel -->
+    <div class="carousel-container">
         <div class="carousel">
-            <div class="slides">
-                <img src="Autumn-Cake.jpeg" alt="Vanilla Cake with Vanilla Buttercream Frosting.">
-                <img src="Butter-Pecan-Cake.jpeg" alt="Yellow Cake with Vanilla Buttercream Frosting.">
-                <img src="Tier-Cake-Stand.jpeg" alt="Cupcakes">
-                <img src="Branded-Item.jpeg" alt="Business Boxing">
-
-                <img src="Butter-Pecan-Cake.jpeg" alt="Yellow Cake with Vanilla Buttercream Frosting.">
-            </div>
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button> 
+            <img src="Autumn-Cake.jpeg" alt="Image 1" class="carousel-item">
+            <img src="Butter-Pecan-Cake.jpeg" alt="Image 2" class="carousel-item">
+            <img src="Tier-Cake-Stand.jpeg" alt="Image 3" class="carousel-item">
+            <img src="Branded-Item.jpeg" alt="Image 4" class="carousel-item">
         </div>
-        <script src="script.js"></script>
+        <button class="prev" onclick="prevSlide()">❮</button>
+        <button class="next" onclick="nextSlide()">❯</button>
+    </div>
+    <script src="script.js"></script>
+
 
         <!--Review Section-->
-        <div class="reviews">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d393941.8003225853!2d-104.9997229!3d39.52193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8a724b9284bb8dd5%3A0xc37aae1e3d995ef2!2sTimeless%20Desserts!5e0!3m2!1sen!2sus!4v1727215056420!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="carousel-review">
+        <div class="review">
+            <img src="review.1.png" alt="review 1" class="review-item">
+            <img src="review.2.png" alt="review 2" class="review-item">
+            <img src="review.3.png" alt="review 3" class="review-item">
+            <img src="review.4.png" alt="review 4" class="review-item">
+            <img src="review.5.png" alt="review 5" class="review-item">
+            <img src="review.6.png" alt="review 6" class="review-item">
         </div>
+        <button class="prev2" onclick="prevReviewSlide()">❮</button>
+        <button class="next2" onclick="nextReviewSlide()">❯</button>
+    </div>
+    
 
-        <!--Order Template-->
-        <div class="order-template">
-            <p>To check availability, get prices, or place an order please select the link below!</p>
-            <a href="https://enquiry.bakediary.com/104C472B88AB4B0DAEF31399C85A9120/Form" target="_blank" style="color: black;">Inquiry Form</a>
-        </form>
-        
-        <p>Orders placed with less than 3 days notice may incur a rush fee.</p>
-        <p>Please note that pickups are available by appointment only.</p>
-        </div>
+    <div class="order-display">
+        To check availability, get prices, or place an order please select the link below!
+        Orders placed with less than 3 days notice may incur a rush fee.
+        Please note that pickups are available by appointment only.
+        <a href="https://enquiry.bakediary.com/104C472B88AB4B0DAEF31399C85A9120/Form" target="_blank" style="color: black;">Inquiry Form</a>
     </body>
 </html>
