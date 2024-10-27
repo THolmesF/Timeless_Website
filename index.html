@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Timeless Desserts</title>
-        <style>
-           body {
-                background-image: url("timeless-background.png");
-                background-size: cover;
-                width: 100%;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-            }
-        </style>
-        <!--Link to the external CSS file-->
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body> 
-
-        <!--Main heading of the web page-->
-        <div class="logo-picture">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Desserts</title>
+    <!-- Inline CSS for background -->
+    <style>
+        body {
+            background-image: url("timeless-background.png");
+            background-size: cover;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main heading of the web page -->
+    <div class="logo-picture">
         <img src="Logo Compressed.png" alt="Logo" class="logo">
-        </div>
-
-        <!--Paragraph with some text-->
-        <script src="script.js"></script>
-        
-        <!--Navigation bar-->
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-              
-        <!-- Picture Carousel -->
+    </div>
+    
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Picture Carousel -->
     <div class="carousel-container">
         <div class="carousel">
             <img src="Autumn-Cake.jpeg" alt="Image 1" class="carousel-item">
@@ -47,10 +43,9 @@
         <button class="prev" onclick="prevSlide()">❮</button>
         <button class="next" onclick="nextSlide()">❯</button>
     </div>
-    <script src="script.js"></script>
-
-
-        <!--Review Section-->
+    
+    
+    <!-- Review Carousel Section -->
     <div class="carousel-review">
         <div class="review">
             <img src="review.1.png" alt="review 1" class="review-item">
@@ -63,12 +58,17 @@
         <button class="prev2" onclick="prevReviewSlide()">❮</button>
         <button class="next2" onclick="nextReviewSlide()">❯</button>
     </div>
+    <script src="script.js"></script>
     
-
+    <!-- Order Information and Link -->
     <div class="order-display">
         To check availability, get prices, or place an order please select the link below!
         Orders placed with less than 3 days notice may incur a rush fee.
         Please note that pickups are available by appointment only.
         <a href="https://enquiry.bakediary.com/104C472B88AB4B0DAEF31399C85A9120/Form" target="_blank" style="color: black;">Inquiry Form</a>
-    </body>
+    </div>
+
+    <!-- Link to JavaScript file was here but I deleted it will see if it was needed. -->
+    
+</body>
 </html>

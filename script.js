@@ -1,20 +1,15 @@
-//Wait for the DOM to fully load before running the script
 document.addEventListener('DOMContentLoaded', () => {
-    //Log a message to the console
     console.log('JavaScript is working!');
+
+    // Initialize the carousels
+    showSlide(currentIndex);
+    showReviewSlide(currentIndex2);
 });
 
-console.log("Script loaded");
-
-console.log("Script loaded");
-
-// Picture Carousel
 let currentIndex = 0;
 
 function showSlide(index) {
-    console.log("showSlide called with index:", index);
     const slides = document.querySelectorAll('.carousel-item');
-    console.log("Number of slides:", slides.length);
     if (index >= slides.length) {
         currentIndex = 0;
     } else if (index < 0) {
@@ -24,50 +19,44 @@ function showSlide(index) {
     }
     const offset = -currentIndex * 100;
     document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
-    console.log("Current offset:", offset);
 }
 
 function nextSlide() {
-    console.log("nextSlide called");
     showSlide(currentIndex + 1);
 }
 
 function prevSlide() {
-    console.log("prevSlide called");
     showSlide(currentIndex - 1);
 }
 
-// Initialize the carousel
-showSlide(currentIndex);
-
-// Reviews Carousel
 let currentIndex2 = 0;
 
+// Function to show a specific review slide based on the index
 function showReviewSlide(index) {
-    console.log("showReviewSlide called with index:", index);
     const slides = document.querySelectorAll('.review-item');
-    console.log("Number of review slides:", slides.length);
-    if (index >= slides.length) {
+    const totalSlides = slides.length;
+
+    // Handle index bounds
+    if (index >= totalSlides) {
         currentIndex2 = 0;
     } else if (index < 0) {
-        currentIndex2 = slides.length - 1;
+        currentIndex2 = totalSlides - 1;
     } else {
         currentIndex2 = index;
     }
+
+    // Calculate the offset for the translation
     const offset = -currentIndex2 * 100;
+    // Apply the translation to the review container
     document.querySelector('.review').style.transform = `translateX(${offset}%)`;
-    console.log("Current review offset:", offset);
 }
 
+// Function to show the next review slide
 function nextReviewSlide() {
-    console.log("nextReviewSlide called");
     showReviewSlide(currentIndex2 + 1);
 }
 
+// Function to show the previous review slide
 function prevReviewSlide() {
-    console.log("prevReviewSlide called");
     showReviewSlide(currentIndex2 - 1);
 }
-
-// Initialize the carousel
-showReviewSlide(currentIndex2);
