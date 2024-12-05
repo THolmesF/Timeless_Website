@@ -302,7 +302,7 @@ button:hover {
 
 /* Pre order container hidden by default */
 .preorder { 
-    display: none; /* Hidden by default */
+    display: flex; /* Use flex to center the popup */
     position: fixed;
     top: 0;
     left: 0;
@@ -317,15 +317,18 @@ button:hover {
 /* Pre order content box */
 .preorder-content {
     background-color: #fff;
-    padding: 20px;
+    padding: 5%;
     border-radius: 5px;
-    width: 300px;
+    width: 90%; /* Set width to 90% of the viewport width */
+    max-width: 400px; /* sets a max-width for larger screens */
+    max-height: 90%; /* Adjust max height to ensuere it fits on the screen */
     text-align: center;
     position: relative;
+    overflow: hidden;
     background-image: url(snowfall.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 250%;
+    background-size: cover;
 
 }
 
