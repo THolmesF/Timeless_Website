@@ -6,6 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
     showReviewSlide(currentIndex2);
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Show the popup after 5 seconds
+    setTimeout(() => {
+        document.getElementById('preorder').style.display = 'flex';
+    }, 5000);
+
+    // Close the popup when the close button is clicked
+    document.querySelector('.preorder-btn').addEventListener('click', () => {
+        document.getElementById('preorder').style.display = 'none';
+    });
+
+    // Handle form submission
+    document.getElementById('preorderForm').addEventListener('preorder', (event) => {
+        event.preventDefault();
+        alert('Thank you for ordering!');
+        document.getElementById('preorder').style.display = 'none';
+    });
+});
+
+//temporary storage
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('subscriptionForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        let email = document.getElementById('email').value;
+
+        // Save email to local storage
+        localStorage.setItem('subscriberEmail', email);
+        alert('Thank you for subscribing!');
+
+        document.getElementById('popup').style.display = 'none';
+    });
+});
+
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -60,3 +94,30 @@ function nextReviewSlide() {
 function prevReviewSlide() {
     showReviewSlide(currentIndex2 - 1);
 }
+
+// Ensure the script runs after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add an event listener to the review form
+    document.getElementById('reviewForm').addEventListener('submit', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get the reviewer's name and review text
+        let name = document.getElementById('name').value;
+        let review = document.getElementById('review').value;
+
+        // Create a new review block
+        let reviewBlock = document.createElement('div');
+        reviewBlock.className = 'review';
+        // Use backticks for template literals
+        reviewBlock.innerHTML = `<h3>${name}</h3><p>${review}</p>`;
+
+        // Append the new review to the reviews container
+        document.getElementById('reviews').appendChild(reviewBlock);
+
+        // Clear the form inputs
+        document.getElementById('name').value = '';
+        document.getElementById('review').value = '';
+    });
+});
+
