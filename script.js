@@ -7,24 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+//document.addEventListener('DOMContentLoaded', () => {
     // Show the popup after 5 seconds
-    setTimeout(() => {
-        document.getElementById('preorder').style.display = 'flex';
-    }, 5000);
+ //   setTimeout(() => {
+   //     document.getElementById('preorder').style.display = 'flex';
+    //}, 5000);
 
     // Close the popup when the close button is clicked
-    document.querySelector('.preorder-btn').addEventListener('click', () => {
-        document.getElementById('preorder').style.display = 'none';
-    });
+    //document.querySelector('.preorder-btn').addEventListener('click', () => {
+    //    document.getElementById('preorder').style.display = 'none';
+    //});
 
     // Handle form submission
-    document.getElementById('preorderForm').addEventListener('preorder', (event) => {
-        event.preventDefault();
-        alert('Thank you for ordering!');
-        document.getElementById('preorder').style.display = 'none';
-    });
-});
+    //document.getElementById('preorderForm').addEventListener('preorder', (event) => {
+      //  event.preventDefault();
+        //alert('Thank you for ordering!');
+        //document.getElementById('preorder').style.display = 'none';
+    //});
+// });
 
 //temporary storage
 document.addEventListener('DOMContentLoaded', () => {
